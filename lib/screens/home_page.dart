@@ -1,22 +1,41 @@
 import 'package:flutter/material.dart';
-import 'package:math/screens/addition_page.dart';
 
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Quiz App'),
+        title: Text('Home'),
       ),
       body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => AdditionWidget()),
-            );
-          },
-          child: Text('Start Addition Quiz'),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/settings');
+              },
+              child: Text('Go to Settings'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/addition');
+              },
+              child: Text('Start Addition Quiz'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/multiplication');
+              },
+              child: Text('Start Multiplication Quiz'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/spelling');
+              },
+              child: Text('Start Spelling Quiz'),
+            ),
+          ],
         ),
       ),
     );
